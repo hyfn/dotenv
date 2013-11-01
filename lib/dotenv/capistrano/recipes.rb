@@ -3,7 +3,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   namespace :dotenv do
     desc "Symlink shared .env to current release"
-    task :symlink, roles: :app do
+    task :symlink, roles: [:app,:db] do
       run "ln -nfs #{dotenv_path} #{release_path}/.env"
     end
   end
