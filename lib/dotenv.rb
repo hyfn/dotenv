@@ -23,3 +23,5 @@ protected
     filenames.empty? ? (filenames << '.env') : filenames
   end
 end
+
+require 'dotenv/railtie' if defined?(Rails)
